@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de cadastro de nota</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="bloco">
+        <div style="flex-direction: row; align-items: center; justify-content: center;">
+            <form method="POST" action="/cadastro" class="formulario" style="width: 25%; margin-bottom: 50px;">
+                <h3>Cadastro</h3>
+                <input type="text" name="ide" id="ide" placeholder="Digite o id">
+
+                <label>Materia:</label> <input type="text" name="materia" id="materia">
+                <label>Descrição:</label> <input type="text" name="descricao" id="descricao">
+                <label>Nota:</label> <input type="text" name="nota" id="nota">
+
+                <button type="submit" style="margin-top: 5px;">Cadastrar</button>
+
+            </form>
+
+
+            <button type="button" onclick="byid()" style="margin-left: 60px;">Listar nota</button>
+            <button type="button" onclick="delet()">Excluir nota</button>
+            <button type="button" onclick="update()">atualizar nota</button>
+            <button type="button" onclick="bid()">find by id</button>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
