@@ -1,15 +1,15 @@
 const route = require( 'express' ).Router();
-const Hunt = require( '../model/hunt' );
+const Status = require( '../model/status' );
 
 route.get( '/', ( req, res ) => {
 
-    res.sendFile( __basedir + '/public/pages/hunt.html' );
+    res.sendFile( __basedir + '/public/pages/status.html' );
 } )
 
 route.get( '/get/:nome', async ( req, res ) => {
     try {
         let nomeUser = req.params.nome
-        const todos = await Hunt.find( { nome: nomeUser } );
+        const todos = await Status.find( { nome: nomeUser } );
         res.json(todos)
 
     } catch ( error ) {
@@ -18,7 +18,7 @@ route.get( '/get/:nome', async ( req, res ) => {
 } )
 
 route.post( '/cadastro', async ( req, res ) => {
-    const hunt = new Hunt( { //esta constante será o nome utilizado no bd para as colections
+    const nome = new Status( { //esta constante será o nome utilizado no bd para as colections
         nome: req.body.nome,
         level1: req.body.level1,
         level2: req.body.level2,
@@ -29,8 +29,8 @@ route.post( '/cadastro', async ( req, res ) => {
 
     } );
     try {
-        const huntSaved = await hunt.save();
-        res.json( huntSaved );
+        const StatusSaved = await nome.save();
+        res.json( StatusSaved );
         // res.sendFile(__basedir + '/index.html');
 
     } catch ( err ) {

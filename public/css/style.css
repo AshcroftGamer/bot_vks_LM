@@ -1,43 +1,137 @@
+:root {
+    --vermelho: #ED1B2E;
+    --preto: #000000;
+    --branco: #E5E5E5;
+    --rozinha: #ca4141, 30%;
+    --fundo: #FFFFFF, 10%;
+    --font: 'Inter', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
 }
 
-.bloco {
-    padding: 5px;
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* menu */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: arial, helvetica, sans-serif;
+    font-size: 12px;
+}
+header{
     display: flex;
-    margin: auto;
-    width: 100vh;
-    height: 60vh;
-    background-color: silver;
-}
-
-.formulario {
-    width: 50%;
-    height: 50%;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    margin: auto;
+    background-color: #3d3838;
 }
 
-h3 {
-    font-size: 20px;
-    align-items: center;
-    margin-bottom: 21px;
-    margin-left: 85px;
-}
-input {
-    width: 200px;
+
+h1.logo{
+    color: white;
 }
 
-button {
-    justify-content: center;
-    border: none;
-    border-radius: 3px;
+.menu {
+    list-style: none;
+    /* border: 1px solid #c0c0c0; */
+    float: left;
+    height: 50px;
+}
+
+.menu li {
+    position: relative;
+    float: left;
+    border-right: 1px solid #c0c0c0;
+}
+
+.menu li a {
+    color: rgb(247, 247, 247);
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+}
+
+.menu li a:hover {
+    background: #333;
+    color: #fff;
+}
+
+.menu li ul {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    background-color: rgb(48, 44, 44);
+    display: none;
+}
+
+.menu li:hover ul, .menu li.over ul {
+    display: block;
+}
+
+.menu li ul li {
+    /* border: 1px solid #c0c0c0; */
+    display: block;
     width: 150px;
-    height: 30px;
-    font-size: 15px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    background-color: rgb(201, 38, 38);
+}
+
+.principal {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+@media ( min-width: 150px) {
+    body {
+        background-color: silver;
+    }
+    .bloco{
+        margin: auto;
+        padding: auto;
+        width: 20vh;
+        justify-items: center;
+
+    }
+}
+
+@media ( min-width: 500px) {
+    .containner{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-self: baseline;
+        width: 100%;
+    }
+    .bloco{
+        margin: auto;
+        padding: auto;
+        width: 20vh;
+        justify-items: center;
+
+    }
+    .bloco label{
+        display: block;
+    }
+    /* .bloco .info{
+        display: inline;
+        width: 45%;
+    } */
+    .bloco input{
+        display:block;
+    }
 }
