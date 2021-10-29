@@ -2,11 +2,18 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require('cors');
+
+
 require("dotenv/config");
+
+
+app.use(cors())
 app.use(express.static(__dirname + "/public"));
 app.use( '/css', express.static( __dirname + 'public/css' ) );
 app.use( '/js', express.static( __dirname + 'public/js' ) );
 app.use( '/img', express.static( __dirname + 'public/img' ) );
+
 
 
 app.use(bodyParser.json());
@@ -32,6 +39,6 @@ app.get('/', (req, res) =>{
 mongoose.connect(process.env.CONN, { useNewUrlParser: true, useUnifiedTopology: true}, () => console.log("bagaça rodando"));
 
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
     console.log('rodou a bagaça')
 });
