@@ -16,6 +16,8 @@ app.use(bodyParser.urlencoded({ extended: false}));
 const rotaStatus = require('./routes/status') ;
 const rotaCaca = require('./routes/hunt');
 const cadastroRoute = require("./routes/cadastro");
+const rotaAbout = require('./routes/contato');
+app.use('/contato', rotaAbout);
 app.use("/cadastro", cadastroRoute);
 app.use('/hunt', rotaCaca);
 app.use('/status', rotaStatus);

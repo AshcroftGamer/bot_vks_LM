@@ -22,15 +22,16 @@
 
             <nav class="top">
                 <ul class="menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Guild Status</a>
-                        <ul>
+                    <li><a href="/"">Home</a></li>
+                    <li><a href="/hunt">Caça</a></li>
+                    <!-- <li><a href="/hunt">Caça</a>
+                        <!-- <ul>
                             <li><a href="/hunt">Hunt</a></li>
                             <li><a href="/status">Status</a></li>
                             <li><a href="/rank">Rank</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="/sobre">Sobre</a></li>
+                        </ul> -->
+                    </li> -->
+                    <li><a href="/status">Status</a></li>
                     <li><a href="/contato">Contato</a></li>
                 </ul>
             </nav>
@@ -38,22 +39,11 @@
         </header>
         <div class="containner">
             <div class="bloco">
-                <label for="nome">NickName</label>
-                <input class="info" type="text" name="nome" id="nome" placeholder="Nick">
-                <input class="info" type="text" name="iggid" id="iggid" placeholder="IGG ID">
-                <button class="btn-verifica" onclick="buscaName()">Verificar</button>
-                <label for="power">Poder</label>
-                <input class="hunt" type="text" name="power" id="power" readonly=“true”>
-                <label for="kill">Kill</label>
-                <input class="hunt" type="text" name="kill" id="kill" readonly=“true”>
-                <label for="ades">Armadilhas destruidas</label>
-                <input class="hunt" type="text" name="ades" id="ades" readonly=“true”>
 
-                <label for="abes">Ataques bem</label>
-                <input class="hunt" type="text" name="abes" id="abes" readonly=“true”>
-
-                <label for="ames">Ataques mal</label>
-                <input class="hunt" type="text" name="ames" id="ames" readonly=“true”>
+                <h3>Pedido de doação!</h3>
+                <span>Caros amigos e sulenes parceiros de empreitada, peço encarecidamente que ajude esse nobre mendigo,
+                    com o que tiver além(fora de suas bolsas), pois o trabalho foi arduo e o pagamento pouco(Ragnar
+                    veaco) e conto com cada um de voces me enviando 10m de recursos, att Ash...</span>
 
 
 
@@ -61,25 +51,7 @@
         </div>
     </div>
 
-    <script>
-        function buscar() {
-            let id = document.getElementById( 'iggid' ).value;
-            fetch( 'https://lords-mobile.herokuapp.com/status/' + id, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json;charset=utf-8'
 
-                }
-            } ).then( result => {
-                return result.json()
-            } ).then( data => {
-
-
-                // console.log(data)
-
-            } )
-        }
-    </script>
 
 </body>
 

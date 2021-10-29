@@ -1,7 +1,7 @@
 :root {
     --vermelho: #ED1B2E;
     --preto: #000000;
-    --branco: #E5E5E5;
+    --branco: #ffffff;
     --rozinha: #ca4141, 30%;
     --fundo: #FFFFFF, 10%;
     --font: 'Inter', sans-serif;
@@ -92,35 +92,76 @@ h1.logo{
     flex-direction: column;
 }
 
+label{
+    margin-left: 5px;
+    font-weight: 700;
+}
 
-
+button{
+    width: 98%;
+    height: 25px;
+    margin: auto 1px;
+    padding: auto auto;
+    background-color: var(--vermelho);
+    color: var(--branco);
+    font-weight: 900;
+    margin-top: 3px;
+    margin-bottom: 5px;
+}
+h2{
+    font-size: 15px;
+    margin-left: 20px;
+}
+.bloco h3{
+    text-align: center;
+}
+.bloco span{
+    font-style: italic;
+    text-justify: distribute;
+}
 @media ( min-width: 150px) {
     body {
         background-color: silver;
     }
+    .containner{
+        display: flex;
+        flex-direction: column;
+        width: 40vh;
+        height: 50vh;
+        margin: auto auto;
+        margin-top: 40px;
+
+        background-color: #3d3838;
+        border: 1px solid black;
+
+    }
     .bloco{
-        margin: auto;
-        padding: auto;
-        width: 20vh;
+
+        background-color: #c0c0c0;
+        width: 155px;
+        margin: auto auto;
+        padding: 10px;
         justify-items: center;
+        border: 1px solid white;
 
     }
 }
 
 @media ( min-width: 500px) {
     .containner{
+        background-color: #3d3838;
+        border: 1px solid black;
         margin-top: 40px;
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: center;
-        align-self: baseline;
-        width: 100%;
+        width: 50vh;
+        height: 50vh;
     }
     .bloco{
-        margin: auto;
-        padding: auto;
-        width: 20vh;
+        background-color: #c0c0c0;
+        margin: auto auto;
+        padding: auto auto;
         justify-items: center;
 
     }

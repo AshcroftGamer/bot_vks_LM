@@ -1,72 +1,5 @@
-function add() {
 
-    let user = {
-        materia: window.document.getElementsByName( 'materia' ).value,
-        descricao: window.document.getElementsByName( 'descricao' ).value,
-        nota: window.document.getElementsByName( 'nota' ).value
-    };
-
-    let response = fetch( 'http://localhost:3000/cadastro/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify( user )
-    } );
-
-}
-async function byid() {
-
-    fetch( 'http://localhost:3000/cadastro/listarnota/' + document.getElementById( "materia" ).value )
-        .then( result => {
-
-            return result.json();
-
-        } )
-        .then( data => {
-
-            console.log( data );
-            //document.getElementById("ide").value = data._id;
-            document.getElementById( "descricao" ).value = data.descricao;
-            document.getElementById( "nota" ).value = data.nota;
-            fetch( 'http://localhost:3000/cadastro/buscaid/' + data._id )
-                .then( result => {
-
-                    return result.json();
-
-                } )
-                .then( data => {
-
-                    console.log( data );
-                    document.getElementById( "materia" ).value = data.materia;
-                    document.getElementById( "descricao" ).value = data.descricao;
-                    document.getElementById( "nota" ).value = data.nota;
-                    
-            
-                } );
-
-
-
-
-        } );
-
-}
-async function buscaName() {
-
-    fetch( 'http://localhost:3000/status/get/' + document.getElementById( "nome" ).value )
-        .then( result => {
-
-            return result.json();
-
-        } )
-        .then( data => {
-
-            console.log( data[0] );
-           
-        } );
-
-}
- async function huntStatus() {
+ async function userStatus() {
     let nome = document.getElementById( "nome" ).value
     await fetch( 'http://localhost:3000/status/get/' + nome )
         .then( result => {
@@ -96,6 +29,33 @@ async function buscaName() {
         } );
 
 }
+ async function huntStatus() {
+    let nome = document.getElementById( "nome" ).value
+    await fetch( 'http://localhost:3000/hunt/get/' + nome )
+        .then( result => {
+
+            return result.json();
+
+        } )
+        .then( data => {
+
+            console.log( data[0] );
+
+            // console.log(data[0].poder)
+            let lv1 = document.getElementById('lv1');
+            lv1.value = data[0].level1;
+            let lv2 = document.getElementById('lv2');
+            lv2.value = data[0].level2;
+            let lv3 = document.getElementById('lv3');
+            lv3.value = data[0].level3;
+            let lv4 = document.getElementById('lv4');
+            lv4.value = data[0].level4;
+            let lv5 = document.getElementById('lv5');
+            lv5.value = data[0].level5;
+           
+        } );
+
+}
 
 function formatarNumero(n) {
     var n = n.toString();
@@ -108,82 +68,4 @@ function formatarNumero(n) {
     }
 
     return r.split('').reverse().join('');
-}
-
-async function delet() {
-
-    fetch( 'http://localhost:3000/cadastro/excluirnota/' + document.getElementById( "materia" ).value, { method: 'DELETE' } )
-        .then( result => {
-            return result.json();
-        } )
-        .then( data => {
-
-            console.log( data );
-
-        } );
-
-    alert( "Exclui " + document.getElementById( "materia" ).value );
-    document.getElementById( "materia" ).value = "";
-
-}
-async function update() {
-
-    fetch( 'http://localhost:3000/cadastro/atualizanota/' + document.getElementById( "materia" ).value,
-        {
-            method: 'PATCH',
-            body: JSON.stringify( { descricao: document.getElementById( "descricao" ).value } ),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
-
-        } )
-        .then( result => {
-
-            return result.json();
-
-        } )
-        .then( data => {
-            console.log( data )
-
-        } );
-
-
-
-
-}
-async function bid() {
-
-
-    // Se o codigo for introduzido em X input execute -  se não execute este outro
-    fetch( 'http://localhost:3000/cadastro/buscaid/' + document.getElementById( "ide" ).value, )
-        .then( result => {
-
-            return result.json();
-
-        } )
-        .then( data => {
-
-            console.log( data );
-            document.getElementById( "materia" ).value = data.materia;
-            document.getElementById( "descricao" ).value = data.descricao;
-            document.getElementById( "nota" ).value = data.nota;
-            var ab = data._id;
-
-            fetch( 'http://localhost:3000/cadastro/buscamateria/' + document.getElementById( "materia" ).value, )
-                .then( result => {
-
-                    return result.json();
-
-                } )
-                .then( data => {
-
-                    console.log( data );
-                    console.log( ab )
-
-                } );
-
-        } );
-
-
-
 }
