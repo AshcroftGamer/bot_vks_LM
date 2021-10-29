@@ -1,7 +1,7 @@
 
  async function userStatus() {
     let nome = document.getElementById( "nome" ).value
-    await fetch( 'http://localhost:3000/status/get/' + nome )
+    await fetch( 'https://central-vikings.herokuapp.com/status/get/' + nome )
         .then( result => {
 
             return result.json();
@@ -31,7 +31,7 @@
 }
  async function huntStatus() {
     let nome = document.getElementById( "nome" ).value
-    await fetch( 'http://localhost:3000/hunt/get/' + nome )
+    await fetch( 'https://central-vikings.herokuapp.com/hunt/get/' + nome )
         .then( result => {
 
             return result.json();

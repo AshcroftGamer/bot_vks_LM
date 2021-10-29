@@ -1,24 +1,6 @@
-# Olá bem vindo ao ...
+# Olá bem vindo ao Sistema VK$...
 
 
-### Para testar o programa/soft deve-se instalar todas as dependências, execute as seguintes linhas de comandos:
+### sistema/site desenvolvido para rodar e contabilizar quantos mobs são derrubados por cada player dentro da nossa guild
 
-<pre>
-npm install nodemon express dotenv body-parser mongoose --save
-</pre>
 
-### Em package.json Defina a seguinte linha de comando:*
-
-<pre>
-"start": "nodemon app.js"
-</pre>
-
-### De forma que fique como o código abaixo:
-<pre>
-`"scripts": {
-    "test":"", 
-    "start": "nodemon app.js"
-  },`
-</pre>
-
-### OBS.: Caso não resolva com os passos acima, veja as dependências no _package.json_ e as instale corretamente.
